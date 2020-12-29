@@ -12,6 +12,7 @@ Video on Elemental mapping: Spot, Line and Area Analysis</div> -->
 </video><br>Video on Elemental mapping: Spot, Line and Area Analysis</div>
 </div>
 <div style="content: '.';clear: both;display: block;height: 0;visibility: hidden;"></div>
+<div style ="text-align: justify;text-justify: inter-word;">
 X-ray is generated in three steps (Fig. 1), where in step (i) the incident electron beam of energy (E = hν) knocks out a core shell electron (K-shell in this case), then in step (ii) an electron from higher shell jumps to core-shell via relaxation process, and then in step (iii) the excess energy is released as x-ray, which is characteristic of that element (mapping to the transition of energy difference between energies of these shells). Hence, this characteristic energy can be utilized to identify the elements producing these x-ray radiations. Number of such event correlate with the amount of material present. Hence, the higher the content of material, higher the number of these events. And each element has different set of energy transitions from one shell to other, hence each element can be identified and quantified. Low atomic number elements are difficult to analyze due to their poor x-ray cross-section (or poor x-ray intensity). <br><br>
 <img src="images/fig1.PNG"><br>
 Figure 1: The three steps eliciting the generation of characteristic x-rays in an element<br><br>
@@ -54,5 +55,5 @@ Notes:
 
 It may be presented here that the signals are arriving from bulk, so contribution from surface oxide (if any) may be limited or may be undetectable. If severe oxidation has occurred, then only the EDS spectrum may be able to provide that information.<br>  
 
-It may also be noted here that the content of carbon is not accurately provided by the instrument. There are other methods to accurately determine the content of carbon in a material.<br>
+It may also be noted here that the content of carbon is not accurately provided by the instrument. There are other methods to accurately determine the content of carbon in a material.<br></div>
 
