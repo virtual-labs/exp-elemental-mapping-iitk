@@ -1,6 +1,6 @@
 <div><div style="float:left;width:55%;text-align: justify;text-justify: inter-word; margin-right:40px;">It was presented earlier that the incident beam electrons interact with matter and result characteristic x-rays (among other signals of Auger electrons, secondary electrons, and back-scattered electrons). These characteristic x-rays can be utilized to obtain the elemental information of the sample. We have already learned in the earlier experiments that back-scattered electron imaging provides a compositional contrast due to difference in the atomic number. In other words, the high back-scattering of electrons in BSE mode can provide us an indication of different phases in a material. But, that information is only qualitative in nature. Herein, the characteristic x-ray signal can be utilized to obtain <i><b>quantitative</b></i> information on content of each phase or location. The intensity of x-ray is proportional to the content of each element, which can be combined to provide information on presence of an element of a phase.<br> </div> 
-<div style="float:left;width:40%;border: solid 1 px black;">
-<!-- <video width="320" height="240" controls>
+<!-- <div style="float:left;width:40%;border: solid 1 px black;">
+<video width="320" height="240" controls>
   <source src="images/exp4-eds_img_req_mod.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video><br>
@@ -9,7 +9,8 @@ Video on Elemental mapping: Spot, Line and Area Analysis</div> -->
 <video width="320" height="240" controls>
   <source src="images/exp4-eds_img_req_mod.mp4" type="video/mp4">
   Your browser does not support the video tag.
-</video><br>Video on Elemental mapping: Spot, Line and Area Analysis</div>
+</video><br>Video on Elemental mapping: Spot, Line and Area Analysis
+</div>
 </div>
 <div style="content: '.';clear: both;display: block;height: 0;visibility: hidden;"></div>
 <div style ="text-align: justify;text-justify: inter-word;">
