@@ -90,7 +90,7 @@
 
   const myQuestions = [
     {
-      question: "1.X-ray signals typically arrive from what depth of material ",  ///// Write the question inside double quotes
+      question: "1. X-ray signals typically arrive from what depth of material ",  ///// Write the question inside double quotes
       answers: {
         a: "Top 1 nm ",                  ///// Write the option 1 inside double quotes
         b: "Top 5 nm ",                  ///// Write the option 2 inside double quotes
@@ -103,7 +103,7 @@
     },
 
     {
-     question: "2.Which X-ray is used to detect elemental composition: ",  ///// Write the question inside double quotes
+     question: "2. Which X-ray is used to detect elemental composition: ",  ///// Write the question inside double quotes
       answers: {
         a: "characteristic x-rays",                  ///// Write the option 1 inside double quotes
         b: "continuous x-rays",                  ///// Write the option 2 inside double quotes
@@ -112,7 +112,7 @@
     },  
     
     {
-     question: "3.Which compositional analysis can NOT be performed using X-ray energy dispersive spectroscopy ",  ///// Write the question inside double quotes
+     question: "3. Which compositional analysis can NOT be performed using X-ray energy dispersive spectroscopy ",  ///// Write the question inside double quotes
       answers: {
         a: "Spot analysis ",                  ///// Write the option 1 inside double quotes
         b: "Line analysis ",                  ///// Write the option 2 inside double quotes

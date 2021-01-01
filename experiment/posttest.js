@@ -90,7 +90,7 @@
 
   const myQuestions = [
     {
-      question: "1.The average composition obtained from X-ray energy dispersive spectroscopy _______ differentiate between a composite and a solid-solution.",  ///// Write the question inside double quotes
+      question: "1. The average composition obtained from X-ray energy dispersive spectroscopy _______ differentiate between a composite and a solid-solution.",  ///// Write the question inside double quotes
       answers: {
         a: "can",                  ///// Write the option 1 inside double quotes
         b: "can not",                  ///// Write the option 2 inside double quotes
@@ -99,7 +99,7 @@
     },
 
     {
-      question: "2.What is Z-correction in Energy dispersive spectroscopy? ",  ///// Write the question inside double quotes
+      question: "2. What is Z-correction in Energy dispersive spectroscopy? ",  ///// Write the question inside double quotes
       answers: {
         a: "Atomic number ",                  ///// Write the option 1 inside double quotes
         b: "Absorption  ",                  ///// Write the option 2 inside double quotes
@@ -123,7 +123,7 @@
     },  									                  ///// this line
 
 {
-      question: "4.What is F-correction in Energy dispersive spectroscopy? ",  ///// Write the question inside double quotes
+      question: "4. What is F-correction in Energy dispersive spectroscopy? ",  ///// Write the question inside double quotes
       answers: {
         a: "Atomic number ",                  ///// Write the option 1 inside double quotes
         b: "Absorption  ",                  ///// Write the option 2 inside double quotes
@@ -134,7 +134,7 @@
       correctAnswer: "d"                ///// Write the correct option inside double quotes
     },
     {
-      question: "5.The following image is taken using which mode of X-ray energy dispersive spectroscopy?<br><img src='images/fig9.PNG'> ",  ///// Write the question inside double quotes
+      question: "5. The following image is taken using which mode of X-ray energy dispersive spectroscopy?<br><img src='images/fig9.PNG'> ",  ///// Write the question inside double quotes
       answers: {
         a: "Spot/Area Analysis  ",                  ///// Write the option 1 inside double quotes
         b: "Line Scan   ",                  ///// Write the option 2 inside double quotes
