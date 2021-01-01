@@ -1,6 +1,6 @@
-1. Set the sample for X-ray energy dispersive spectroscopy<br> 
+1. Set the sample for X-ray energy dispersive spectroscopy.<br> 
 
-2. Obtain the spot pattern for the sample <br>
+2. Obtain the spot pattern for the sample.<br>
 
 3. Select the line analysis and appreciate the variation in the composition across the line. You may realize that the composition (or counts) are provided across the length of the line.<br> 
 
