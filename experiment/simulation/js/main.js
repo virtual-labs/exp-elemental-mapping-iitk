@@ -38,7 +38,7 @@ function type(txt, cur = 0) {
     timerId = setTimeout(type, typeSpeed, txt, cur + 1);
 }
 // type("this is test")
-type("1. Load the sample by clicking on button@2. Choose any one mode spot, line, area (for making line click on any two points in the image)@3. Click on execute button@4. Then make the spot, line, area depending upon your selection@5. At last click on calculate button to see result");
+type("1. Switch on the machine by clicking on switch on button@2. Set the accelerating voltage@3. Click on composite button to load composite sample on machine@4. Switch on the beam by clicking on Beam On button@5. Choose any one mode spot, line, area (for making line click on any two points in the image)@6. Click on execute button@7. Then make the spot, line, area depending upon your selection@8. At last click on calculate button to see result");
 
 /*-----------------------volume-------------------------*/
 
@@ -394,6 +394,7 @@ document.getElementById("load").onclick = function () {
         return;
     }
     if (opt != 0) {
+        document.getElementById("machineImage").src = "./images/sem.gif";
         document.getElementById("sample").style.display="";
         ModeGroup("enable");
         addClass(document.getElementById("load"), "out");
@@ -412,7 +413,7 @@ var task = 1;
 document.getElementById("nextTask").onclick = function(){
     if(task == 1){
         document.querySelectorAll(".labelA").forEach(element => {
-            element.innerHTML = "C";
+            element.innerHTML = "Element C";
         });
         document.getElementById("remark").style.display="";
         task = 2;
@@ -420,7 +421,7 @@ document.getElementById("nextTask").onclick = function(){
     }
     else{
         document.querySelectorAll(".labelA").forEach(element => {
-            element.innerHTML = "A";
+            element.innerHTML = "Element A";
         });
         document.getElementById("remark").style.display="none";
         task = 1;
@@ -654,6 +655,15 @@ function showToast(msg, type1 = 0) {
 
 document.getElementById("calc").onclick = function () {
     if(task == 1){
+
+        if(opt == 2){
+            document.getElementById("percentage-tab").style.display = "none";
+            document.getElementById("chartContainer").style.display = "";
+        } else {
+            document.getElementById("percentage-tab").style.display = "";
+            document.getElementById("chartContainer").style.display = "none";
+        }
+
         if (opt == 1) {
             var pos = tempPos;
             if (inside([pos.x, pos.y], polygon1) || inside([pos.x, pos.y], polygon3) || inside([pos.x, pos.y], polygon4) || inside([pos.x, pos.y], polygon6) || inside([pos.x, pos.y], polygon8)) {
@@ -667,70 +677,92 @@ document.getElementById("calc").onclick = function () {
         } else if (opt == 2) {
             let point1 = posprev;
             let point2 = posnext;
+            let prev = -1,next = -1;
             let m = (point2.y - point1.y) / (point2.x - point1.x);
+            console.log("Slope : ",m);
             let countA=0,countB=0;
-            for(i=point1.x;i<=point2.x;i++){
+            let timer = 0;
+            let points1 = [],points2 = [];
+            for(i=(point1.x < point2.x?point1.x:point2.x);i<=(point1.x < point2.x?point2.x:point1.x);i++){
                 y = m*(i - point2.x) + point2.y;
                 if (inside([i, y], polygon1) || inside([i, y], polygon3) || inside([i, y], polygon4) || inside([i, y], polygon6) || inside([i, y], polygon8)) {
                     countB++;
+                    prev = next;
+                    next = 2;
                 } else {
                     countA++;
+                    prev = next;
+                    next = 1;
                 }
+                if(timer == 0){
+                    if(next == 1){
+                        points1.push({x:timer,y:100});
+                        points2.push({x:timer,y:0});
+                    } else {
+                        points2.push({x:timer,y:100});
+                        points1.push({x:timer,y:0});
+                    }
+                }
+                else if(prev != -1 && next != -1 && prev != next){
+                    if(prev == 1){
+                        points1.push({x:timer,y:100});
+                        points2.push({x:timer,y:0});
+                    } else {
+                        points2.push({x:timer,y:100});
+                        points1.push({x:timer,y:0});
+                    }
+
+                    if(next == 1){
+                        points1.push({x:timer,y:100});
+                        points2.push({x:timer,y:0});
+                    } else {
+                        points2.push({x:timer,y:100});
+                        points1.push({x:timer,y:0});
+                    }
+                }
+                else{
+                    if(prev == 1){
+                        points1.push({x:timer,y:100});
+                        points2.push({x:timer,y:0});
+                    } else {
+                        points2.push({x:timer,y:100});
+                        points1.push({x:timer,y:0});
+                    }
+                }
+                timer += 1;
             }
-            document.getElementById("chartContainer").style.display = "";
+            console.log(countA,countB);
             var chart = new CanvasJS.Chart("chartContainer", {
                 animationEnabled: true,
                 title: {
                     text: "Line Analysis"
                 },
                 axisY: {
-                    title: "Intensity"
+                    title: "% of Element"
+                },
+                axisX: {
+                    title: "Distance(in px)"
                 },
                 data: [{
-                    type: "splineArea",
+                    type: "stepLine",
                     showInLegend:true,
                     legendMarkerType: "circle",
-                    color : "red",
                     name : "A",
                     markerSize: 5,
-                    dataPoints: [{
-                            x: 0,
-                            y: 0
-                        },
-                        {
-                            x: 30,
-                            y: Math.round(countA / (countA + countB) * 100)
-                        },
-                        {
-                            x: 60,
-                            y: 0
-                        }
-                    ]
+                    dataPoints: points1
                 },{
-                    type: "splineArea",
+                    type: "stepLine",
                     showInLegend:true,
                     legendMarkerType: "circle",
-                    color : "green",
                     name : "B",
                     markerSize: 5,
-                    dataPoints: [{
-                            x: 60,
-                            y: 0
-                        },
-                        {
-                            x: 90,
-                            y: Math.round(countB / (countA + countB) * 100)
-                        },
-                        {
-                            x: 120,
-                            y: 0
-                        }
-                    ]
+                    dataPoints: points2
                 }]
             });
             chart.render();
             document.getElementById("percentage-A").value = `${Math.round(countA / (countA + countB) * 100)}%`;
             document.getElementById("percentage-B").value = `${Math.round(countB / (countA + countB) * 100)}%`;
+            document.getElementById("percentage-tab").style.display = "none";
         } else if (opt == 3) {
             let side = Math.sqrt(parseInt(document.getElementById("mode").value));
             let center = tempPos;
@@ -750,6 +782,15 @@ document.getElementById("calc").onclick = function () {
     }
 
     if(task == 2){
+
+        if(opt == 2){
+            document.getElementById("percentage-tab").style.display = "none";
+            document.getElementById("chartContainer").style.display = "";
+        } else {
+            document.getElementById("percentage-tab").style.display = "";
+            document.getElementById("chartContainer").style.display = "none";
+        }
+
         if (opt == 1) {
             var pos = tempPos;
             if (inside([pos.x, pos.y], polygon1) || inside([pos.x, pos.y], polygon3) || inside([pos.x, pos.y], polygon4) || inside([pos.x, pos.y], polygon6) || inside([pos.x, pos.y], polygon8)) {
@@ -763,71 +804,91 @@ document.getElementById("calc").onclick = function () {
         } else if (opt == 2) {
             let point1 = posprev;
             let point2 = posnext;
+            let prev = -1,next = -1;
             let m = (point2.y - point1.y) / (point2.x - point1.x);
             let countA=0,countB=0;
-            for(i=point1.x;i<=point2.x;i++){
+            let timer = 0;
+            let points1 = [],points2 = [];
+            for(i=(point1.x < point2.x?point1.x:point2.x);i<=(point1.x < point2.x?point2.x:point1.x);i++){
                 y = m*(i - point2.x) + point2.y;
                 if (inside([i, y], polygon1) || inside([i, y], polygon3) || inside([i, y], polygon4) || inside([i, y], polygon6) || inside([i, y], polygon8)) {
                     countB++;
+                    prev = next;
+                    next = 2;
                 } else {
                     countA += 0.4;
-                    countB += 0.6
+                    countB += 0.6;
+                    prev = next;
+                    next = 3;
                 }
+                if(timer == 0){
+                    if(next == 3){
+                        points1.push({x:timer,y:40});
+                        points2.push({x:timer,y:60});
+                    } else {
+                        points2.push({x:timer,y:100});
+                        points1.push({x:timer,y:0});
+                    }
+                }
+                else if(prev != -1 && next != -1 && prev != next){
+                    if(prev == 3){
+                        points1.push({x:timer,y:40});
+                        points2.push({x:timer,y:60});
+                    } else {
+                        points2.push({x:timer,y:100});
+                        points1.push({x:timer,y:0});
+                    }
+
+                    if(next == 3){
+                        points1.push({x:timer,y:40});
+                        points2.push({x:timer,y:60});
+                    } else {
+                        points2.push({x:timer,y:100});
+                        points1.push({x:timer,y:0});
+                    }
+                }
+                else{
+                    if(prev == 3){
+                        points1.push({x:timer,y:40});
+                        points2.push({x:timer,y:60});
+                    } else {
+                        points2.push({x:timer,y:100});
+                        points1.push({x:timer,y:0});
+                    }
+                }
+                timer += 1;
             }
-            document.getElementById("chartContainer").style.display = "";
             var chart = new CanvasJS.Chart("chartContainer", {
                 animationEnabled: true,
                 title: {
                     text: "Line Analysis"
                 },
                 axisY: {
-                    title: "Intensity"
+                    title: "% of Element"
+                },
+                axisX: {
+                    title: "Distance(in px)"
                 },
                 data: [{
-                    type: "splineArea",
+                    type: "stepLine",
                     showInLegend:true,
                     legendMarkerType: "circle",
-                    color : "red",
                     name : "A",
                     markerSize: 5,
-                    dataPoints: [{
-                            x: 0,
-                            y: 0
-                        },
-                        {
-                            x: 30,
-                            y: Math.round(countA / (countA + countB) * 100)
-                        },
-                        {
-                            x: 60,
-                            y: 0
-                        }
-                    ]
+                    dataPoints: points1
                 },{
-                    type: "splineArea",
+                    type: "stepLine",
                     showInLegend:true,
                     legendMarkerType: "circle",
-                    color : "green",
                     name : "B",
                     markerSize: 5,
-                    dataPoints: [{
-                            x: 60,
-                            y: 0
-                        },
-                        {
-                            x: 90,
-                            y: Math.round(countB / (countA + countB) * 100)
-                        },
-                        {
-                            x: 120,
-                            y: 0
-                        }
-                    ]
+                    dataPoints: points2
                 }]
             });
             chart.render();
             document.getElementById("percentage-A").value = `${Math.round(countA / (countA + countB) * 100)}%`;
             document.getElementById("percentage-B").value = `${Math.round(countB / (countA + countB) * 100)}%`;
+            document.getElementById("percentage-tab").style.display = "none";
         } else if (opt == 3) {
             let side = Math.sqrt(parseInt(document.getElementById("mode").value));
             let center = tempPos;
@@ -874,6 +935,7 @@ function inside(point, vs) {
             (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
         if (intersect) inside = !inside;
     }
+    console.log(inside);
 
     return inside;
 }

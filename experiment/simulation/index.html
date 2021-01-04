@@ -58,8 +58,8 @@
                                 </div>
                             </div>
                         </div>
-                        <center><button class="btn btn-primary" id="material1">Metal</button></center><br><br>
-                        <button class="but sm w-100 blue" id="load">Load</button><br><br>
+                        <center><button class="btn btn-primary" id="material1">Composite</button></center><br><br>
+                        <button class="but sm w-100 blue" id="load">Beam On</button><br><br>
                         <center>
                             <div class="btn-group" role="group" aria-label="Basic example" id="mode-group">
                                 <button class="btn btn-secondary" id="spot">Spot</button>
@@ -69,7 +69,7 @@
                         </center>
                         <br><br>
                         <div class="form-group" style="display:none;" id="selectMode">
-                            <label for="area">Enter The Area</label>
+                            <label for="area">Enter The Area(in px)</label>
                             <input type="text" class="form-control" id="mode">
                         </div>
                         <div class="row">
@@ -86,7 +86,7 @@
                     <div class="panel-head">
                         Electron Microscope
                     </div>
-                    <img src="./images/sem.gif" height=600 width=500>
+                    <img src="./images/sem-static.gif" height=600 width=500 id = "machineImage">
                 </div>
 
             </div>
@@ -102,20 +102,20 @@
 
                         <div id="sample" style="display: none;">
                             <div class="row m-3">
-                                <div class="col-6"><label class="col-3 labelA">A</label><span
+                                <div class="col-6"><label class="col-3 labelA">Element A</label><span
                                         style="display: inline-block;background-color: #ebe9e6;width:70%;height:20px;border-radius: 20px;"></span>
                                 </div>
-                                <div class="col-6"><label class="col-3 labelB">B</label><span
+                                <div class="col-6"><label class="col-3 labelB">Element B</label><span
                                         style="display: inline-block;background-color: #000000;width:70%;height:20px;border-radius: 20px;"></span>
                                 </div>
                             </div>
-                            <form class="row m-3">
+                            <form class="row m-3" id = "percentage-tab">
                                 <label class="col-3">Percentage of A : </label>
                                 <input type="text" id="percentage-A" class="form-control col-3" disabled>
                                 <label class="col-3">Percentage of B : </label>
                                 <input type="text" id="percentage-B" class="form-control col-3" disabled>
                             </form>
-                            <span id="remark" style="color:red;display: none;">** where C is 40 % of A and 60 % of B</span>
+                            <span id="remark" style="color:red;display: none;">** where C is an alloy of element A and element B and is 40 % of A and 60 % of B</span>
                             <div id="chartContainer" style="height: 370px; width: 100%;display:none;"></div><br><br>
                             <button class="but sm w-100 red col-12" id="nextTask">Next Task</button>
                         </div>

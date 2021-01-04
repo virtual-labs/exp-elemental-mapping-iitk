@@ -229,6 +229,7 @@ a {
 
 #typer {
   height: 10rem;
+  overflow:auto;
 }
 
 #scene-anim {
