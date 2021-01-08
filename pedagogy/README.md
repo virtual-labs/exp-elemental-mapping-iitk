@@ -60,7 +60,7 @@ Read the theory and comprehend the concepts related to the experiment. [LO1, LO2
 
 Sr. No |	Learning Objective	| Task to be performed by <br> the student  in the simulator | Assessment Questions as per LO & Task
 :--|:--|:--|:-:
-1.| Student will be able to<br> learn the Elemental analysis using various modes in energy dispersive spectroscopy | Find out the composition using spot<br>- Find the composition variation across the boundary using line scan<br>- Map the elements for the selected region. | 1. <img src="images/flowchart-reverse-digits-num.png"/><br><br>In the given image the compound present at spot 1 is ___ <b>HfB2</b>
+1.| Student will be able to<br> learn the Elemental analysis using various modes in energy dispersive spectroscopy | Find out the composition using spot<br>- Find the composition variation across the boundary using line scan<br>- Map the elements for the selected region. | 1. <img src="images/spotImg.png"/><br><br>In the given image the compound present at spot 1 is ___ <b>HfB2</b>
  <br>
 <br/>
 <div align="right">
