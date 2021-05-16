@@ -1,0 +1,26 @@
+[{
+	"question": "1. X-ray signals typically arrive from what depth of material ",
+	"answers": {
+		"a": "Top 1 nm ",
+		"b": "Top 5 nm ",
+		"c": "Up to 0.1 – 1 µm  ",
+		"d": "Above few µm   "
+	},
+	"correctAnswer": "d"
+}, {
+	"question": "2. Which X-ray is used to detect elemental composition: ",
+	"answers": {
+		"a": "characteristic x-rays",
+		"b": "continuous x-rays"
+	},
+	"correctAnswer": "a"
+}, {
+	"question": "3. Which compositional analysis can NOT be performed using X-ray energy dispersive spectroscopy ",
+	"answers": {
+		"a": "Spot analysis ",
+		"b": "Line analysis ",
+		"c": "Bulk elemental analysis",
+		"d": "Monolayer elemental analysis "
+	},
+	"correctAnswer": "d"
+}]
