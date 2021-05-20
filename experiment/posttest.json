@@ -1,0 +1,43 @@
+[{
+	"question": "1. The average composition obtained from X-ray energy dispersive spectroscopy _______ differentiate between a composite and a solid-solution.",
+	"answers": {
+		"a": "can",
+		"b": "can not"
+	},
+	"correctAnswer": "b"
+}, {
+	"question": "2. What is Z-correction in Energy dispersive spectroscopy? ",
+	"answers": {
+		"a": "Atomic number ",
+		"b": "Absorption  ",
+		"c": "Fluorescence",
+		"d": "Zeta-potential"
+	},
+	"correctAnswer": "a"
+}, {
+	"question": "3.\tWhat is A-correction in Energy dispersive spectroscopy?",
+	"answers": {
+		"a": "Atomic number",
+		"b": "Adsorption",
+		"c": "Absorption",
+		"d": "Fluorescence"
+	},
+	"correctAnswer": "c"
+}, {
+	"question": "4. What is F-correction in Energy dispersive spectroscopy? ",
+	"answers": {
+		"a": "Atomic number ",
+		"b": "Absorption  ",
+		"c": "Force",
+		"d": "Fluorescence"
+	},
+	"correctAnswer": "d"
+}, {
+	"question": "5. The following image is taken using which mode of X-ray energy dispersive spectroscopy?<br><img src='images/fig9.PNG'> ",
+	"answers": {
+		"a": "Spot/Area Analysis  ",
+		"b": "Line Scan   ",
+		"c": "Elemental Mapping "
+	},
+	"correctAnswer": "b"
+}]
